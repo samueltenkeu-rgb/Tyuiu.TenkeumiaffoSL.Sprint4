@@ -1,11 +1,30 @@
-﻿namespace Tyuiu.TenkeumiaffoSL.Sprint4.Task3.V4.Test
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tyuiu.TenkeumiaffoSL.Sprint4.Task3.V4.Lib;
+
+namespace Tyuiu.TenkeumiaffoSL.Sprint4.Task3.V4.Test
 {
     [TestClass]
-    public sealed class DataServiceTest
+    public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidCalculate()
         {
+            DataService ds = new DataService();
+
+            int[,] array = new int[5, 5] {
+                { 6, 5, 4, 1, 5 },
+                { 8, 2, 3, 4, 2 },
+                { 3, 7, 7, 1, 3 },
+                { 3, 4, 8, 1, 3 },
+                { 4, 3, 5, 5, 2 }
+            };
+
+            int res = ds.Calculate(array);
+
+
+            int wait = 2;
+
+            Assert.AreEqual(wait, res);
         }
     }
 }
