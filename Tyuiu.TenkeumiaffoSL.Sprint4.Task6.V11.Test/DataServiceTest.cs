@@ -1,11 +1,22 @@
-﻿namespace Tyuiu.TenkeumiaffoSL.Sprint4.Task6.V11.Test
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tyuiu.TenkeumiaffoSL.Sprint4.Task6.V11.Lib;
+
+namespace Tyuiu.TenkeumiaffoSL.Sprint4.Task6.V11.Test
 {
     [TestClass]
-    public sealed class DataServiceTest
+    public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidCalculate()
         {
+            DataService ds = new DataService();
+
+            string[] array = { "Кошка", "Собака", "Слон", "Жираф", "Бегемот", "Игуана", "Ягуар" };
+
+            int res = ds.Calculate(array);
+            int wait = 3;
+
+            Assert.AreEqual(wait, res);
         }
     }
 }
